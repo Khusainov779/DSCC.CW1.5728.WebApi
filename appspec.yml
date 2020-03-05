@@ -5,7 +5,7 @@ files:
     destination: /var/www/dscc_5728
   - source: scripts/dscc_5728.conf
     destination: /etc/httpd/conf.d/
-  - source: scripts/dscc_5728s.service
+  - source: scripts/dscc_5728.service
     destination: /etc/systemd/system/
 
 hooks:
