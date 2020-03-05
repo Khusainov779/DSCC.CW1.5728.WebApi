@@ -1,0 +1,25 @@
+version: 0.0
+os: linux
+files:
+  - source: /DSCC.CW1.5728/
+    destination: /var/www/dscc_5728
+  - source: scripts/dscc_5728.conf
+    destination: /etc/httpd/conf.d/
+  - source: scripts/dscc_5728s.service
+    destination: /etc/systemd/system/
+
+hooks:
+  ApplicationStop:
+    - location: scripts/stop_service
+      timeout: 300
+      runas: root
+
+  BeforeInstall:
+    - location: scripts/remove_application
+      timeout: 300
+      runas: root
+
+  ApplicationStart:
+    - location: scripts/start_service
+      timeout: 300
+      runas: root

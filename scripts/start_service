@@ -1,0 +1,5 @@
+#!/bin/bash
+
+service httpd start
+systemctl enable dscc_5728.service
+systemctl start dscc_5728.service

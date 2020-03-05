@@ -1,0 +1,3 @@
+#!/bin/bash
+service httpd stop
+systemctl stop dscc_5728.service
